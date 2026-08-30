@@ -13,7 +13,7 @@ re-themes the running storefront's Button/Card backgrounds on both `/` and
 `/product/:id`, via computed style — see `screenshots/live-swap/*.png`.
 
 **Migration evidence — real tags, real diff.** `main` is tagged
-`sorb-migrated` (this commit). A separate `pre-sorb` branch/tag (commit
+`sorb-migrated` (commit `23338e4`, the full P4 build). A separate `pre-sorb` branch/tag (commit
 `bca6454`) forks from it and replaces every token binding this build used —
 `jjPreset.js`'s `var(--kebab-token-id)` values, the badge `[data-badge]` CSS
 in `ProductCard.vue`/`ProductView.vue`, and ~9 more scattered `var(--…)`
