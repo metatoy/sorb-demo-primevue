@@ -1,0 +1,25 @@
+{
+  "name": "sorb-demo-primevue",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "P4a spike — Janes Jeans on PrimeVue v4 (Vue 3), proving sorbInit's non-React live-preview path.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "sorb": "sorb dev --port 7784",
+    "verify": "node scripts/verify-live-swap.mjs"
+  },
+  "dependencies": {
+    "@primeuix/themes": "^3.0.0",
+    "primevue": "^4.5.5",
+    "vue": "^3.5.42"
+  },
+  "devDependencies": {
+    "@sorb/juice": "0.3.0",
+    "@sorb/leaf": "0.3.0",
+    "@vitejs/plugin-vue": "^6.0.8",
+    "playwright": "^1.62.1",
+    "vite": "^8.2.2"
+  }
+}

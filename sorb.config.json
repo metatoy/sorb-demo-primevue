@@ -1,0 +1,6 @@
+{
+  "namespace": "jj-primevue",
+  "tokenSources": [],
+  "port": 7784,
+  "appUrl": "http://localhost:5173"
+}
