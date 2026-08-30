@@ -94,8 +94,9 @@ function onSave() {
   margin-bottom: var(--space-600);
 }
 .jj-avatar {
-  background: var(--button-primary-bg-default);
-  color: var(--button-primary-fg-default);
+  /* PRE-SORB: hardcoded, not swappable at runtime. */
+  background: #24345c;
+  color: #ffffff;
 }
 .jj-form-grid {
   display: grid;

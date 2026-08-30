@@ -61,23 +61,25 @@ const badgeVariant = computed(() => {
   object-fit: cover;
 }
 .jj-badge {
+  /* PRE-SORB: badge colors hardcoded from the brand deck, no token binding —
+     a re-theme can't reach these at all without editing this CSS + rebuilding. */
   position: absolute;
-  top: var(--space-200);
-  left: var(--space-200);
-  padding: var(--space-100) var(--space-300);
-  border-radius: var(--badge-radius);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  background: var(--badge-bg-default);
-  color: var(--badge-fg-default);
+  top: 8px;
+  left: 8px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #e8632b; /* stitch-500, hand-copied */
+  color: #ffffff;
 }
 .jj-badge[data-badge='new'] {
-  background: var(--badge-bg-new);
-  color: var(--badge-fg-new);
+  background: #ffa45c; /* stitch-300 */
+  color: #182440; /* denim-800 */
 }
 .jj-badge[data-badge='sale'] {
-  background: var(--badge-bg-sale);
-  color: var(--badge-fg-sale);
+  background: #c23b2e; /* red-500 */
+  color: #ffffff;
 }
 .jj-price {
   font-weight: var(--font-weight-semibold);

@@ -60,12 +60,13 @@ const newWashes = computed(() => products.filter((p) => p.badge === 'new wash'))
 .jj-hero {
   text-align: center;
   padding: var(--space-1200) var(--space-400);
-  background: var(--color-surface-raised);
-  border-radius: var(--card-radius);
+  /* PRE-SORB: hardcoded — not swappable at runtime. */
+  background: #f2ede3;
+  border-radius: 8px;
   margin-bottom: var(--space-1200);
 }
 .jj-hero-eyebrow {
-  color: var(--color-accent);
+  color: #e8632b; /* PRE-SORB: hardcoded stitch-500 */
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   letter-spacing: 0.06em;

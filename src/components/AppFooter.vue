@@ -29,8 +29,9 @@ import { nav, copy } from '../data/kit.js'
 
 <style scoped>
 .jj-footer {
-  background: var(--color-surface-raised);
-  border-top: 1px solid var(--card-border);
+  /* PRE-SORB: hardcoded — not swappable at runtime. */
+  background: #f2ede3;
+  border-top: 1px solid #e5dbcb;
   padding: var(--space-800) var(--space-600) var(--space-400);
   margin-top: var(--space-1200);
 }

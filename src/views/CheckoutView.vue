@@ -160,7 +160,7 @@ function placeOrder() {
   font-weight: var(--font-weight-medium);
 }
 .jj-error {
-  color: var(--color-danger);
+  color: #c23b2e; /* PRE-SORB: hardcoded, not swappable at runtime */
 }
 .jj-radio-row {
   display: flex;

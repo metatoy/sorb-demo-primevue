@@ -114,7 +114,7 @@ const subtotalCents = cartSubtotalCents
   width: 48px;
   height: 60px;
   object-fit: cover;
-  border-radius: var(--radius-sm);
+  border-radius: 2px; /* PRE-SORB: hardcoded, not swappable at runtime */
 }
 .jj-line-name {
   font-weight: var(--font-weight-medium);

@@ -89,7 +89,7 @@ const paged = computed(() => filteredSorted.value.slice(first.value, first.value
   margin-top: var(--space-600);
 }
 .jj-filters {
-  border-right: 1px solid var(--card-border);
+  border-right: 1px solid #e5dbcb; /* PRE-SORB: hardcoded, not swappable at runtime */
   padding-right: var(--space-600);
 }
 .jj-filter-group {

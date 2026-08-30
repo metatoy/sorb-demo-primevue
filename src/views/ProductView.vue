@@ -168,22 +168,24 @@ function onBuyNow() {
   object-fit: cover;
 }
 .jj-badge {
+  /* PRE-SORB: same hardcoded hex as ProductCard.vue — copy-pasted, not
+     shared, which is its own pre-Sorb drift risk (two places to update). */
   display: inline-block;
-  padding: var(--space-100) var(--space-300);
-  border-radius: var(--badge-radius);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
-  background: var(--badge-bg-default);
-  color: var(--badge-fg-default);
-  margin-bottom: var(--space-200);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #e8632b;
+  color: #ffffff;
+  margin-bottom: 8px;
 }
 .jj-badge[data-badge='new'] {
-  background: var(--badge-bg-new);
-  color: var(--badge-fg-new);
+  background: #ffa45c;
+  color: #182440;
 }
 .jj-badge[data-badge='sale'] {
-  background: var(--badge-bg-sale);
-  color: var(--badge-fg-sale);
+  background: #c23b2e;
+  color: #ffffff;
 }
 .jj-pdp-meta {
   color: var(--color-ink-muted);
