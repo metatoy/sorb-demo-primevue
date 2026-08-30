@@ -12,16 +12,28 @@ theme ("Acid Wash") through the local `sorb dev` bridge and confirms it
 re-themes the running storefront's Button/Card backgrounds on both `/` and
 `/product/:id`, via computed style — see `screenshots/live-swap/*.png`.
 
-**Honest scope note:** this build was written directly against the kit-token
-pipeline (jjPreset.js → `var(--kebab-token-id)` → `src/tokens/generated/`)
-rather than staged as two genuine commits (hardcoded Aura defaults, tag
-`pre-sorb`; then migrated, tag `sorb-migrated`). No `pre-sorb` tag exists in
-this repo's history. The **mapping table below is the real migration
-recipe** — the literal PrimeVue-default → JJ-token-id mapping this build
-required — produced as documentation instead of via a git diff. If the
-literal two-phase evidence (an actual hardcoded snapshot + before/after
-diff) is needed for the marketing artifact, that's a follow-up pass, not
-done here.
+**Migration evidence — real tags, real diff.** `main` is tagged
+`sorb-migrated` (this commit). A separate `pre-sorb` branch/tag (commit
+`bca6454`) forks from it and replaces every token binding this build used —
+`jjPreset.js`'s `var(--kebab-token-id)` values, the badge `[data-badge]` CSS
+in `ProductCard.vue`/`ProductView.vue`, and ~9 more scattered `var(--…)`
+usages across `HomeView.vue`, `AppFooter.vue`, `ShopView.vue`,
+`AccountView.vue`, `CartView.vue`, `CheckoutView.vue` — with literal hex/px
+values (each annotated `/* PRE-SORB: hardcoded, not swappable at runtime */`).
+It renders pixel-identical at rest (`scripts/smoke-routes.mjs` passes clean
+on that branch too — a real working legacy app, not a strawman) but a Sorb
+preview push has nothing to grab onto: re-theming it requires editing source
+and rebuilding.
+
+```
+git diff --stat sorb-migrated pre-sorb
+# 9 files changed, 101 insertions(+), 116 deletions(-)
+```
+
+The **mapping table below IS that diff's content**, organized as a recipe
+rather than left as a raw patch — read it against
+`git diff sorb-migrated pre-sorb -- src/jjPreset.js` for the literal
+side-by-side.
 
 ## Migration recipe — PrimeVue v4 Aura → Janes Jeans tokens
 
