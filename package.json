@@ -5,21 +5,28 @@
   "type": "module",
   "description": "P4a spike — Janes Jeans on PrimeVue v4 (Vue 3), proving sorbInit's non-React live-preview path.",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "tokens": "style-dictionary build --config ./sd.config.js",
+    "dev": "npm run tokens && vite",
+    "build": "npm run tokens && vite build",
     "sorb": "sorb dev --port 7784",
+    "smoke": "node scripts/smoke-routes.mjs",
     "verify": "node scripts/verify-live-swap.mjs"
   },
   "dependencies": {
+    "@metatoy/janes-jeans": "file:../sorb-demo-kit",
     "@primeuix/themes": "^3.0.0",
+    "@sorb/leaf": "0.3.0",
+    "primeicons": "^8.0.0",
     "primevue": "^4.5.5",
-    "vue": "^3.5.42"
+    "vue": "^3.5.42",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@sorb/juice": "0.3.0",
-    "@sorb/leaf": "0.3.0",
+    "@sorb/seed": "^0.3.0",
     "@vitejs/plugin-vue": "^6.0.8",
     "playwright": "^1.62.1",
+    "style-dictionary": "^4.4.0",
     "vite": "^8.2.2"
   }
 }

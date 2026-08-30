@@ -1,21 +1,26 @@
-// P4a spike boot module — the non-React provider-mount pattern from
+// P4 boot module — the non-React provider-mount pattern from
 // spec/sorb/demo-repo-skeleton.md §2.5: a plain sorbInit() call, no
 // SorbProvider/JSX, no React in the bundle.
 import { createApp } from 'vue'
 import PrimeVue from 'primevue/config'
+import ToastService from 'primevue/toastservice'
 import { sorbInit } from '@sorb/leaf/core'
 import App from './App.vue'
+import { router } from './router.js'
 import { JJPreset } from './jjPreset.js'
 import { sorbConfig } from './sorbConfig.js'
-import './variables.css'
+import 'primeicons/primeicons.css'
+import './tokens/generated/variables.css'
 
 const app = createApp(App)
+app.use(router)
 app.use(PrimeVue, {
   theme: {
     preset: JJPreset,
     options: { darkModeSelector: false },
   },
 })
+app.use(ToastService)
 app.mount('#app')
 
 // Framework-agnostic: sorbInit resolves the bridge, applies committed tokens
