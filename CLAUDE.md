@@ -2,6 +2,18 @@
 
 `sorb-demo-primevue` — Janes Jeans on PrimeVue v4, a Sorb multi-stack demo storefront (P4).
 
+## T8 retrofit (superseded the hand-authored preset)
+
+The hand-authored `src/jjPreset.js` described below has been **deleted**.
+`@sorb/seed` 0.4.0 promoted this repo's mapping to the published
+`sorb/primevue-preset` Style Dictionary format (`sd.config.js`'s `primevue`
+platform); `npm run tokens` now generates
+`src/tokens/generated/jjPreset.generated.js` (gitignored, like the rest of
+`src/tokens/generated/`), and `src/main.js` imports `preset` from there
+instead. The migration recipe below still documents the mapping accurately —
+it's now encoded in `sorb-seed/src/emit/sorbPrimevue.js`'s
+`PRIMEVUE_ROLE_TREE` rather than in this repo's source.
+
 ## Status: P4 full build, live-swap GO
 
 Full six-route storefront (`/`, `/shop`, `/product/:id`, `/cart`, `/checkout`,

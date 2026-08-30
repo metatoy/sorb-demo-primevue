@@ -60,7 +60,8 @@ const menuItems = computed(() => nav.primary.map(toMenuItem))
 
 <style>
 /* Global (unscoped) — the shell reads Janes Jeans tokens directly, same as
-   every PrimeVue component reads them indirectly through jjPreset.js. */
+   every PrimeVue component reads them indirectly through the generated
+   sorb/primevue-preset module (src/tokens/generated/jjPreset.generated.js). */
 :root {
   font-family:
     system-ui,

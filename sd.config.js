@@ -16,12 +16,21 @@ import {
   sorbTokenSet,
   sorbVersions,
   sorbSetMeta,
+  SORB_PRIMEVUE_PRESET,
+  sorbPrimevuePreset,
 } from '@sorb/seed'
 
 StyleDictionary.registerParser(sorbSetMeta)
 StyleDictionary.registerFormat({ name: SORB_RESOLVED, format: sorbResolved })
 StyleDictionary.registerFormat({ name: SORB_TOKENSET, format: sorbTokenSet })
 StyleDictionary.registerFormat({ name: SORB_VERSIONS, format: sorbVersions })
+// `sorb/primevue-preset` — PROMOTED to @sorb/seed 0.4.0 (T4). Generates the
+// definePreset module that used to be hand-authored at src/jjPreset.js (T8
+// retrofit — see sorb-seed/src/emit/sorbPrimevue.js for the format itself).
+// Identity roleMap (this kit's ids ARE the role ids) + default basePreset
+// 'Aura' reproduce jjPreset.js's structure exactly — see CLAUDE.md's
+// migration recipe table for the literal mapping this format encodes.
+StyleDictionary.registerFormat({ name: SORB_PRIMEVUE_PRESET, format: sorbPrimevuePreset })
 
 const KIT = 'node_modules/@metatoy/janes-jeans/tokens'
 
@@ -54,6 +63,13 @@ export default {
         { destination: 'resolved.json', format: SORB_RESOLVED },
         { destination: 'versions.json', format: SORB_VERSIONS },
       ],
+    },
+    // Generated PrimeVue definePreset module — replaces the hand-authored
+    // src/jjPreset.js (see main.js's import + CLAUDE.md migration recipe).
+    primevue: {
+      transformGroup: 'css',
+      buildPath: 'src/tokens/generated/',
+      files: [{ destination: 'jjPreset.generated.js', format: SORB_PRIMEVUE_PRESET }],
     },
   },
 }
